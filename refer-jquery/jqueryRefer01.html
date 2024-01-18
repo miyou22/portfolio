@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css"
+        integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+</head>
+
+<body> 
+    <div id="wrap">
+        <main id="contents">
+            <div class="title">
+                <h1><a href="index.html">선택자</a></h1>
+            </div>
+    <nav class="menu">
+        <ul>
+            <li class="active"><a href="jqueryRefer01.html">선택자</a></li>
+            <li><a href="jqueryRefer02.html">선택 메서드</a></li>
+
+        </ul>
+        <ul>
+            <li><a href="jqueryRefer03.html">속성 메서드</a></li>
+            <li><a href="jqueryRefer04.html">조작 메서드</a></li>
+            <li><a href="jqueryRefer05.html">데이터 메서드</a></li>
+            <li><a href="jqueryRefer06.html">애니메이션 메서드</a></li>
+            <li><a href="jqueryRefer07.html">이벤트 메서드</a></li>
+
+        </ul>
+        <ul>
+            <li><a href="jqueryRefer08.html">샘플</a></li>
+        </ul>
+    </nav>
+    <hr>
+</main>
+</div>
+
+    <div class="table">
+        <table>
+            <caption>기본 선택자</caption>
+            <colgroup>
+                <col style = "width: 10%">
+                <col style = "width: 15%">
+                <col style = "width: 20%">
+                <col style = "width: 20%">
+                <col style = "width: 35%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="center">종류</th>
+                    <th>jquery</th>
+                    <th>예시</th>
+                    <th>javascript</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center" rowspan="5">기본 선택자</a></td>
+                    <td>태그 선택자</td>
+                    <td>$("li")</td>
+                    <td>querySelector("li"), querySelectorAll("li")</td>
+                    <td>기본 태그를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>클래스 선택자</td>
+                    <td>$(".class")</td>
+                    <td>querySelector(".class")</td>
+                    <td>클래스를 선택합니다.</td>
+                </tr>                
+                <tr>
+                    <td>아이디 선택자</td>
+                    <td>$("id")</td>
+                    <td>querySelector("#id")</td>
+                    <td>아이디를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>그룹 선택자</td>
+                    <td>$("#id, .class")</td>
+                    <td>-</td>
+                    <td>여러개를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>전체 선택자</td>
+                    <td>$("*")</td>
+                    <td>querySelector("*")</td>
+                    <td>전체를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="4">계층 선택자</a></td>
+                    <td>하위 선택자</td>
+                    <td>$("div p")</td>
+                    <td>querySelector("div p")</td>
+                    <td>div 태그의 모든 자식 중 p태그를 모두 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>자식 선택자</td>
+                    <td>$("div > p")</td>
+                    <td>-</td>
+                    <td>div 태그 모든 자식 중 첫번째 자식 p태그만 선택합니다.</td>
+                </tr>                
+                <tr>
+                    <td>형제 선택자</td>
+                    <td>$("div + p")</td>
+                    <td>-</td>
+                    <td>div 태그의 인접한 형제 p태그 중 첫번째 태그만 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>형제들 선택자</td>
+                    <td>$("div ~ p")</td>
+                    <td>-</td>
+                    <td>div 태그의 인접한 형제 p태그 중 모든 형제 태그를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="9">속성 선택자</a></td>
+                    <td>[name|="value"]</td>
+                    <td>$("li a[href|='web'])"</td>
+                    <td>-</td>
+                    <td>속성 중에 'web'과 같은 속성 값을 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name*="value"]</td>
+                    <td>$("li a[href*='web'])"</td>
+                    <td></td>
+                    <td>속성 중에 'web'이 포함되어 있는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name~="value"]</td>
+                    <td>$("li a[href~='web'])"</td>
+                    <td></td>
+                    <td>속성 중에 'web'으로 시작하는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name$="value"]</td>
+                    <td>$("li a[href$='web'])"</td>
+                    <td></td>
+                    <td>속성 중에 'web'으로 끝나는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name="value"]</td>
+                    <td>$("li a[href='web'])"</td>
+                    <td></td>
+                    <td>속성 중에 'web'과 일치하는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name!="value"]</td>
+                    <td>$("li a[href!='web'])"</td>
+                    <td></td>
+                    <td>속성 중에 'web'과 일치하지 않는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name^="value"]</td>
+                    <td>$("li a[href^='web'])"</td>
+                    <td></td>
+                    <td>속성 중에 'web'으로 시작하는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name]</td>
+                    <td>$("li a[href])"</td>
+                    <td></td>
+                    <td>속성 중에 일치하는 속성 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>[name="value"][name="value"]</td>
+                    <td>$("li a[href][class])"</td>
+                    <td></td>
+                    <td>속성 중에 'href' 속성과 'class'속성이 모두있는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="13">기본 필터 선택자</a></td>
+                    <td>:animated</td>
+                    <td>$("div:animated")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 애니메이션 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:eq()😍</td>
+                    <td>$("li:eq(2)")</td>
+                    <td></td>
+                    <td>선택된 요소에서 인덱스 번호를 통해 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:gt()</td>
+                    <td>$("li:gt(2)")</td>
+                    <td></td>
+                    <td>선택된 요소에서 인덱스 번호보다 더 큰 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:lt()</td>
+                    <td>$("li:lt(2)")</td>
+                    <td></td>
+                    <td>선택된 요소에서 인덱스 번호보다 적은 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:header</td>
+                    <td>$("div:header")")</td>
+                    <td></td>
+                    <td>선택된 요소에서 제목 요소(h1~h6)를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:first</td>
+                    <td>$("div:first")</td>
+                    <td></td>
+                    <td>선택된 요소에서 첫 번째 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:last</td>
+                    <td>$("div:last")</td>
+                    <td></td>
+                    <td>선택된 요소에서 마지막 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:odd</td>
+                    <td>$("li:odd")</td>
+                    <td></td>
+                    <td>선택된 요소에서 홀수번째 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:even</td>
+                    <td>$("li:even")</td>
+                    <td></td>
+                    <td>선택된 요소에서 짝수번째 요소를 선택합니다</td>
+                </tr>
+                <tr>
+                    <td>:not()</td>
+                    <td>$("li:not(eq(3))")</td>
+                    <td></td>
+                    <td>선택한 요소에서 현재 선택한 요소의 반대 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:root()</td>
+                    <td>$(":root()")</td>
+                    <td></td>
+                    <td>문서의 가장 기본 루트 요소를 선택합니다 </td>
+                </tr>
+                <tr>
+                    <td>:lang()</td>
+                    <td>$("div:lang(kr)")</td>
+                    <td></td>
+                    <td>선택된 요소 중에서 언어 속성 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:target</td>
+                    <td>$("div:target")</td>
+                    <td></td>
+                    <td>선택된 요소 중에서 타켓 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="4">내용 필터 선택자</a></td>
+                    <td>:conains()</td>
+                    <td>$("div:contains")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 일치하는 문자열 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:empty()</td>
+                    <td>$("div:empty")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 텍스트가 없는 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:has()😍</td>
+                    <td>$("div:has")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 일치하는 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:parent</td>
+                    <td>$("div:parent")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 텍스트가 있는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="2">보임 필터 선택자</a></td>
+                    <td>:hidden</td>
+                    <td>$("div:hidden")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 보이지 않는 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:visible</td>
+                    <td>$("div:visible")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 보이는 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="10">자식 요소 필터 선택자</a></td>
+                    <td>:first-child()</td>
+                    <td>$("li:first-child()")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 첫번째 자식 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:first-of-type()</td>
+                    <td>$("p:first-of-type()")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 첫번째 자식 유형 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:first-last()</td>
+                    <td>$("li:first-last()")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 마지막 자식 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:last-of-type()</td>
+                    <td>$("p:last-of-type()")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 마지막 자식 유형 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:nth-child()😍</td>
+                    <td>$("li:nth-child(2)")</td>  <!--1부터 시작함-->
+                    <td>-</td>
+                    <td>선택된 요소에서 인덱스 번호 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:nth-last-child()</td>
+                    <td>$("li:nth-last-child(2)")</td> 
+                    <td>-</td>
+                    <td>선택된 요소에서 마지막 인덱스 번호 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:nth-of-type()</td>
+                    <td>$("li:nth-last-of-type(2)")</td> 
+                    <td>-</td>
+                    <td>선택된 요소에서 마지막 유형 인덱스 번호 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:nth-last-of-type()</td>
+                    <td>$("li:nth-last-of-child(2)")</td> 
+                    <td>-</td>
+                    <td>선택된 요소에서 마지막 유형 인덱스 번호 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:only-child</td>
+                    <td>$(":only-child")</td> 
+                    <td>-</td>
+                    <td>선택된 요소에서 유형이 하나인 요소를 선택합니다.</td>
+                </tr>
+                </tr>
+                    <td>:only-of-type()</td>
+                    <td>$(":only-of-type()")</td> 
+                    <td>-</td>
+                    <td>선택된 요소에서 유형이 오직 하나인 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td class="center" rowspan="15">폼 선택자</a></td>
+                    <td>:button</td>
+                    <td>$(":button")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 버튼 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:checkbox</td>
+                    <td>$(":checkbox")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 체크박스 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:checked</td>
+                    <td>$(":checked")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 checked 박스 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:disabled</td>
+                    <td>$(":disabled")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 disabled 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:embled</td>
+                    <td>$(":embled")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 embled된 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:focus</td>
+                    <td>$(":focus")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 focus된 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:file</td>
+                    <td>$(":file")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 파일 업로드 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:image</td>
+                    <td>$(":image")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 이미지 입력 양식 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:input</td>
+                    <td>$(":input")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 입력 양식 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:password</td>
+                    <td>$(":password")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 패스워드 양식 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:radio</td>
+                    <td>$(":radio")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 라디오 버튼 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:reset</td>
+                    <td>$(":reset")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 리셋 버튼 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:selected</td>
+                    <td>$(":selected")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 selected된 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:submit</td>
+                    <td>$(":submit")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 전송 버튼 요소를 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td>:text</td>
+                    <td>$(":text")</td>
+                    <td>-</td>
+                    <td>선택된 요소에서 텍스트 요소를 선택합니다.</td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+    <hr>
+<!--sample01-->
+    <div id="sample01" class="sample">
+        <h2>01. 기본 선택자<span class="dot"></span></h2>
+        <div class="view view1">
+            <ul>
+                <li>$("li")</li>
+                <li class="class">$(".class")</li>
+                <li id="id">$("#id")</li>
+                <li>$(".class, #id")</li>
+                <li>$("*")</li>
+            </ul>
+        </div>
+        <div class="btn btn1">
+            <a href="#c" class="reset1">리셋</a>
+            <a href="#c" class="btn1-1">클릭하면 클래스(.class)를 선택합니다.</a>
+            <a href="#c" class="btn1-2">클릭하면 아이디(#id)를 선택합니다.</a>
+            <a href="#c" class="btn1-3">클릭하면 기본(li) 태그를 선택합니다.</a>
+            <a href="#c" class="btn1-4">클릭하면 여러가지(#id, .class) 태그를 선택합니다.</a>
+            <a href="#c" class="btn1-5">클릭하면 전체 태그(*)를 선택합니다.</a>
+        </div>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    $(".reset1").click(function(){
+        $(".view li").removeClass("blue");
+    });
+    $(".btn1-1").click(function(){
+        $(".view .class").addClass("blue");
+    });
+    $(".btn1-2").click(function(){
+        $(".view #id").addClass("blue");
+    });
+    $(".btn1-3").click(function(){
+        $(".view li").addClass("blue");
+    });
+    $(".btn1-4").click(function(){
+        $(".view .class, .view #id").addClass("blue");
+    });
+    $(".btn1-5").click(function(){
+        $(".view *").addClass("blue");
+    });
+}
+</code></pre>
+        </div>
+    </div>
+    <hr>
+    <script>
+        $(".reset1").click(function(){
+            $(".view li").removeClass("blue");
+        });
+        $(".btn1-1").click(function(){
+            $(".view .class").addClass("blue");
+        });
+        $(".btn1-2").click(function(){
+            $(".view #id").addClass("blue");
+        });
+        $(".btn1-3").click(function(){
+            $(".view li").addClass("blue");
+        });
+        $(".btn1-4").click(function(){
+            $(".view .class, .view #id").addClass("blue");
+        });
+        $(".btn1-5").click(function(){
+            $(".view *").addClass("blue");
+        });
+    </script>
+    <!-- //sample01-->
+  
+<!--sample01j-->
+<div id="jsample01j" class="sample">
+    <h2>01. 기본 선택자 - javascript<span class="dot"></span></h2>
+    <div class="view jview1">
+        <ul>
+            <li>$("li")</li>
+            <li class="j1_class">$(".class")</li>
+            <li id="j1_id">$("#id")</li>
+            <li>$(".class, #id")</li>
+            <li>$("*")</li>
+        </ul>
+    </div>
+    <div class="btn jbtn1">
+        <a href="#c" class="jreset1">리셋</a>
+        <a href="#c" class="jbtn1-1">클릭하면 클래스(.class)를 선택합니다.</a>
+        <a href="#c" class="jbtn1-2">클릭하면 아이디(#id)를 선택합니다.</a>
+        <a href="#c" class="jbtn1-3">클릭하면 기본(li) 태그를 선택합니다.</a>
+        <a href="#c" class="jbtn1-4">클릭하면 여러가지(#id, .class) 태그를 선택합니다.</a>
+        <a href="#c" class="jbtn1-5">클릭하면 전체 태그(*)를 선택합니다.</a>
+    </div>
+    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const jreset1 = document.querySelector(".jreset1");
+    const jbtn1_1 = document.querySelector(".jbtn1-1");
+    const jbtn1_2 = document.querySelector(".jbtn1-2");
+    const jbtn1_3 = document.querySelector(".jbtn1-3");
+    const jbtn1_4 = document.querySelector(".jbtn1-4");
+    const jbtn1_5 = document.querySelector(".jbtn1-5");
+
+    jbtn1_1.addEventListener("click", function(){
+        document.querySelector(".j1_class").classList.add("red")
+    });
+    jbtn1_2.addEventListener("click", function(){
+        //document.querySelector("#j1_id").classList.add("red")
+        document.getElementById("j1_id").classList.add("red")
+    });
+    jbtn1_3.addEventListener("click", function(){
+        //document.querySelector(".jview1 li").classList.add("red");
+        //document.querySelectorAll(".jview1 li").classList.add("red");
+        const liList = document.querySelectorAll(".jview1 li");  
+       
+      //   for문
+        for (let i=0; i&lt;liList.length; i++){
+            liList[i].classList.add("red");
+        };
+      });    
+      //    forEach문
+      //   liList.forEach(el => {
+      //     el.classList.add("red");
+      //   });
+        //for of문 
+      //   for( let i of liList){
+      //     i.classList.add("red");
+      //   }
+        //for in문
+      //   for( let z in liList){
+      //     liList[z].classList.add("red");
+      //   }
+
+   jreset1.addEventListener("click", function(){
+      //    document.querySelectorAll(".jview1 li").classList.remove("red")
+         const liList1 = document.querySelectorAll(".jview1 li"); 
+         
+         for(let q = 0; q&lt;liList1.length; q++){
+             liList1[q].class.remove("red")
+         }
+     });
+    
+   
+}
+</code></pre>
+    </div>
+</div>
+<hr>
+    <script>
+      const jreset1 = document.querySelector(".jreset1");
+      const jbtn1_1 = document.querySelector(".jbtn1-1");
+      const jbtn1_2 = document.querySelector(".jbtn1-2");
+      const jbtn1_3 = document.querySelector(".jbtn1-3");
+      const jbtn1_4 = document.querySelector(".jbtn1-4");
+      const jbtn1_5 = document.querySelector(".jbtn1-5");
+
+      jbtn1_1.addEventListener("click", function(){
+          document.querySelector(".j1_class").classList.add("red")
+      });
+      jbtn1_2.addEventListener("click", function(){
+          //document.querySelector("#j1_id").classList.add("red")
+          document.getElementById("j1_id").classList.add("red")
+      });
+      jbtn1_3.addEventListener("click", function(){
+          //document.querySelector(".jview1 li").classList.add("red");
+          //document.querySelectorAll(".jview1 li").classList.add("red");
+          const liList = document.querySelectorAll(".jview1 li");  
+         
+        //   for문
+          for (let i=0; i<liList.length; i++){
+              liList[i].classList.add("red");
+          };
+        });    
+        //    forEach문
+        //   liList.forEach(el => {
+        //     el.classList.add("red");
+        //   });
+          //for of문 
+        //   for( let i of liList){
+        //     i.classList.add("red");
+        //   }
+          //for in문
+        //   for( let z in liList){
+        //     liList[z].classList.add("red");
+        //   }
+
+     jreset1.addEventListener("click", function(){
+        //    document.querySelectorAll(".jview1 li").classList.remove("red")
+           const liList1 = document.querySelectorAll(".jview1 li"); 
+           
+           for(let q = 0; q<liList1.length; q++){
+               liList1[q].class.remove("red")
+           }
+       });
+      
+     
+      
+    
+
+    </script>
+<!-- //sample01j-->
+
+<!--sample02-->
+<div id="sample02" class="sample">
+    <h2>02. 계층 선택자<span class="dot"></span></h2>
+    <div class="view view2">
+        <div class="s2"><em>div</em>
+            <span>p<span>p</span></span>
+            <span class="select">p<span>p</span></span>
+            <span>p<span>p</span></span>
+            <span>p<span>p</span></span>
+        </div>
+    </div>
+    <div class="btn btn2">
+        <a href="#c" class="reset2">리셋</a>
+        <a href="#c" class="btn2-1">클릭하면 $("div p") 선택합니다.</a>
+        <a href="#c" class="btn2-2">클릭하면 $("div > p") 선택합니다.</a>
+        <a href="#c" class="btn2-3">클릭하면 $("div + p") 선택합니다.</a>
+        <a href="#c" class="btn2-4">클릭하면 $("div ~ p") 선택합니다.</a>
+    </div>
+    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    $(".reset2").click(function(){
+        $(".s2 span").removeClass("blue");
+    });
+    $(".btn2-1").click(function(){
+        $(".s2 span").addClass("blue");
+    });
+    $(".btn2-2").click(function(){
+        $(".s2 > span").addClass("blue");
+    });
+    $(".btn2-3").click(function(){
+        $(".s2 .select + span").addClass("blue");
+    });
+    $(".btn2-4").click(function(){
+        $(".s2 .select ~ span").addClass("blue");
+    });
+}
+</code></pre>
+    </div>
+</div>
+<hr>
+        <script>
+        $(".reset2").click(function(){
+            $(".s2 span").removeClass("blue");
+        });
+        $(".btn2-1").click(function(){
+            $(".s2 span").addClass("blue");
+        });
+        $(".btn2-2").click(function(){
+            $(".s2 > span").addClass("blue");
+        });
+        $(".btn2-3").click(function(){
+            $(".s2 .select + span").addClass("blue");
+        });
+        $(".btn2-4").click(function(){
+            $(".s2 .select ~ span").addClass("blue");
+        });
+        </script>
+<!-- //sample01-->
+
+    
+    </main>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+       
+        
+    </script>
+</body>
+
+</html>

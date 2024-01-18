@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--나눔 웹 폰트-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <style>
+        @font-face {
+        font-family: 'GmarketSansLight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+        font-family: 'GmarketSansBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+*{
+    margin: 0 auto;
+}
+        body{
+            font-family: 'GmarketSansBold';
+        }
+        .container{
+            width: 1200px;
+            height: 10000px;
+            background: #eee;
+            margin: 0 auto;
+        }
+        #header{
+            height: 100px;
+        }
+        .headerWrap{
+          
+        }
+        .headerWrap ul{
+            display: flex;
+            justify-content:space-between;
+            list-style: none;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+        .headerWrap ul li{}
+        .headerWrap ul li:last-child{
+            margin-right: 0px;
+        }
+
+        .headerWrap ul li img{
+            display: inline-block;
+            margin-left: -4 3px;
+        }
+        .container .imgWrap{
+        }
+        .container .imgWrap img{
+            width: 100%;
+        }
+           /* slider */
+        #nav{height: 500px;}
+        .allImgWrap {
+            display: flex;
+            justify-content: center;
+            height: 30vh;
+        }
+        .imgWrap {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .imgWrap img{
+            width: 100%;
+        }
+        .slider {
+            position: absolute;
+            left: 0; top: 0;
+            transition: all 0.3s;
+        }
+        .boxWrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .twinBox{
+            width: 47%;
+            border: 1px solid #000;
+        }
+        .box1{
+            margin-left: 0px;
+            position: relative;
+        }
+        .nyaaWrap{
+            margin: 20px 0 0 20px;
+        }
+        .box1 h2{
+            display: inline-block;
+        }
+        .box1 p{
+            display: inline-block;
+            margin-bottom: 60px;
+        }
+        .nyaa{
+            margin-bottom: 20px;
+        }
+        .nyaa img{
+            float: left;
+        }
+        .nyaa span{
+            font-size: 20px;
+            line-height: 2.3;
+        }
+        .box1 .about{
+            float: right;
+            position: absolute;
+            top: 20%; left: 72%;
+        }
+       
+        .box2{
+            margin-right: 0px;
+            position: relative;
+        }
+        .box2 h2{
+            display: inline-block;
+        }
+        .box2 p{
+            display: inline-block;
+            margin-bottom: 60px;
+        }
+        .nyaa{
+            margin-bottom: 20px;
+        }
+        .nyaa img{
+            float: left;
+        }
+        .nyaa span{
+            font-size: 20px;
+            line-height: 2.3;
+        }
+        .box2 .about{
+            float: right;
+            position: absolute;
+            top: 20%; left: 72%;
+        }
+        .box2 em{
+            font-size: 12px;
+            margin-left: 20px;
+        }
+        .textBest{
+            margin: 20px 0;
+        }
+        .textBest h2{
+            display: inline-block;
+        }
+        .textBest p{
+            display: inline-block;
+        }
+        .imageAll{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border: 1px solid #000;
+
+        }
+        .imageWrap{
+            border: 1px solid #000;
+            width: 30%;
+        }
+        .imageWrap img{
+            width: 100%;
+        }
+      
+        
+      
+        
+        
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="headerWrap">
+                <ul>
+                    <li><img src="../test/assete/img/logo.jpg" alt="이미지2"></li>
+                    <li>COOKIT소개</li>
+                    <li>COOKIT메뉴</li>
+                    <li>리뷰</li>
+                    <li>이벤트</li>
+                    <li>MY쿡킷</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav id="nav">
+        <div class="container">
+            <div class="allImgWrap">
+                <div class="imgWrap">
+                    <div class="slider" data-name="이미지1"><img src="../test/assete/img/test1.jpg" alt="이미지2"></div>
+                    <div class="slider" data-name="이미지2"><img src="../test/assete/img/test1.jpg" alt="이미지2"></div>
+                    <div class="slider" data-name="이미지3"><img src="../test/assete/img/test1.jpg" alt="이미지2"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main id="main">
+        <div class="container">
+            <div class="boxWrap">
+                <div class="twinBox box1">
+                    <div class="nyaaWrap">
+                        <h2>우리집도 COOKIT배송이 되나요?</h2>
+                        <p>배송이 가능한지 알려드려요</p>
+                        <div class="nyaa">
+                            <img src="../test/assete/img/icon4.jpg" alt="로고3"><span>배송지 검색</span>
+                        </div>
+                        <img src="../test/assete/img/icon1.jpg" alt="로고2" class="about">
+                    </div>
+                </div>
+                <div class="twinBox box2">
+                    <div class="nyaaWrap">
+                        <h2>7월 30일(화)에 받을 수 있어요.</h2>
+                        <p>오전 7시까지 주문하시면 다음날 배송됩니다.</p>
+                        <div class="nyaa">
+                            <img src="../test/assete/img/icon5.jpg" alt="로고3"><span>63:28:32<em>남은시간</em></span>
+                        </div>
+                        <img src="../test/assete/img/icon2.jpg" alt="로고2" class="about">
+                    </div>
+                </div>
+            </div>
+            <div class="textBest"><h2>실시간 베스트|</h2><p> 생생한 리뷰</p></div>
+            <div class="imageAll">
+                <div class="imageWrap">
+                    <img src="../test/assete/img/test2.jpg" alt="음식1">
+                    <h4>평양식 어복쟁반</h4>
+                    <p>33,800원<em>/3인분</em></p>
+                </div>
+                <div class="imageWrap">
+                    <img src="../test/assete/img/test2.jpg" alt="음식1">
+                    <h4>평양식 어복쟁반</h4>
+                    <p>33,800원<em>/3인분</em></p>
+                </div>
+                <div class="imageWrap">
+                    <img src="../test/assete/img/test2.jpg" alt="음식1">
+                    <h4>평양식 어복쟁반</h4>
+                    <p>33,800원<em>/3인분</em></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="container"></div>
+    </footer>
+    <script>
+        const sliderWrap = document.querySelector(".allImgWrap");
+        const sliderImg = document.querySelector(".imgWrap");
+        const slider = document.querySelectorAll(".slider");
+    
+        let currentIndex = 0; //현재 보이는 이미지(첫 번째 이미지)
+        let sliderCount = slider.length; 
+        setInterval(()=>{
+            let nextIndex = (currentIndex + 1) % sliderCount; //0 1 2 3 4 0 1 2 3 4...
+
+            slider[currentIndex].style.opacity="0"
+            slider[nextIndex].style.opacity="1"
+
+            currentIndex = nextIndex;
+        }, 2000);
+
+      
+    </script>
+</body>
+</html>

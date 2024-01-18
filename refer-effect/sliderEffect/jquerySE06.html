@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/highlight.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+    /* slider */
+    .slider-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .slider-img img{
+        width: 100%;
+    }
+    .slider-img {
+       position: absolute;
+       left: 50%; top: 50%;
+       transform: translate(-50%, -50%);
+       width: 800px;
+       height: 480px;
+       overflow: hidden;
+    }
+    .slider-inner {
+       float: left;
+       /* width: 4000px; */
+       height: 480px;
+       position: relative;
+    }
+    .slider-inner .slider {
+       float: left;
+       width: 800px;
+       height: 480px;
+       position: relative;
+    }
+    .slider-inner .slider::before {
+        content: "이미지1";
+        position: absolute;
+        left: 5px; top: 5px;
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        padding: 5px 10px 3px;
+        font-family: 'NEXON Lv1 Gothic OTF';
+    }
+    .slider-inner .slider:nth-child(1){z-index:5;}
+    .slider-inner .slider:nth-child(2){z-index:4;}
+    .slider-inner .slider:nth-child(3){z-index:3;}
+    .slider-inner .slider:nth-child(4){z-index:2;}
+    .slider-inner .slider:nth-child(5){z-index:1;}
+    /* .slider:nth-child(1)::before {content: "이미지1";}
+    .slider:nth-child(2)::before {content: "이미지2";}
+    .slider:nth-child(3)::before {content: "이미지3";}
+    .slider:nth-child(4)::before {content: "이미지4";}
+    .slider:nth-child(5)::before {content: "이미지5";} */
+    .slider-inner .slider::before {content: attr(data-name);
+    }
+
+    .slider-btn a{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        width: 50px;
+        height: 50px;
+        background: rgba(0,0,0,.4);
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.2s;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+    }
+    .slider-btn a:hover{
+        background: rgba(241,96,86,1);
+    }
+    .slider-btn .prev {
+        left: 0;
+    }
+    .slider-btn .next{
+        right: 0;
+    }
+    .slider-dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+    .slider-dot .dot{
+        width: 20px;
+        height: 20px;
+        background: rgba(0,0,0,.4);
+        display: inline-block;
+        border-radius: 50%;
+        transition: all 0.3s;
+        text-indent: -9999px;
+        margin: 3px;
+    }
+    .slider-dot .dot.active {
+        background: rgba(255,255,255,0.9);
+    }
+
+</style>
+</head>
+<body class="bg bg9 brown">
+<!-- 
+    첫번째 이미지를 op0를 해주고 두번째 이미지를 op1로 해줌
+    그리고 1초뒤에는 두번째는 op0 세번째 이미지를 op1로 해줌
+
+ -->
+
+    <!--contents-->
+    <main>
+        <div class="slider-wrap">
+            <div class="slider-img">
+                <div class="slider-inner">
+                    <div class="slider" data-name="이미지1"><img src="../assets/img/bg11.jpg" alt="이미지1"></div>
+                    <div class="slider" data-name="이미지2"><img src="../assets/img/bg12.jpg" alt="이미지2"></div>
+                    <div class="slider" data-name="이미지3"><img src="../assets/img/bg13.jpg" alt="이미지3"></div>
+                    <div class="slider" data-name="이미지4"><img src="../assets/img/bg14.jpg" alt="이미지4"></div>
+                    <div class="slider" data-name="이미지5"><img src="../assets/img/bg15.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+            <div class="slider-btn">
+                <a href="#" class="prev">prev</a>
+                <a href="#" class="next">next</a>
+            </div>
+            <div class="slider-dot">
+                <!-- <a href="#" class="dot active">1</a>
+                <a href="#" class="dot">2</a>
+                <a href="#" class="dot">3</a>
+                <a href="#" class="dot">4</a>
+                <a href="#" class="dot">5</a> -->
+            </div> 
+        </div>
+    </main>
+    <!--//contents-->
+
+
+    <!-- info -->
+<div class="info">
+    <h1>Slider Effect05 - jquery</h1>
+    <p>이미지 슬라이드 - 버튼 추가</p>
+</div>
+
+<div class="info right">
+    <ul>
+        <li><a href="javascriptSE01.html">1</a></li>
+        <li><a href="javascriptSE02.html">2</a></li>
+        <li><a href="javascriptSE03.html">3</a></li>
+        <li><a href="javascriptSE04.html">4</a></li>
+        <li><a href="javascriptSE05.html">5</a></li>
+        <li><a href="javascriptSE06.html">6</a></li>
+    </ul>
+    <ul>
+        <li><a href="jquerySe01.html">1</a></li>
+        <li><a href="jquerySe02.html">2</a></li>
+        <li><a href="jquerySe03.html">3</a></li>
+        <li><a href="jquerySe04.html">4</a></li>
+        <li><a href="jquerySe05.html">5</a></li>
+        <li class="active"><a href="jquerySe06.html">6</a></li>
+    </ul>
+</div>
+
+    
+<div class="source">
+    <button>소스보기</button>
+</div>
+<!-- //info -->
+
+<!--modal-->
+<div id="modal">
+    <div class="modal-bg">
+      <div class="modal-cont">
+        <div class="code-view">
+            <div class="view-header">
+                <div class="dot" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="view-title">
+                <ul>
+                    <li class="active"><a href="#">html</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">Javascript</a></li>
+                </ul>
+            </div>
+            <div class="view-cont">
+                <div class="html">
+<pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Parallax Effect&lt;/title&gt;
+    ​
+        &lt;link rel="stylesheet" href="../assets/css/style.css"&gt;
+        &lt;link rel="stylesheet" href="../assets/css/highlight.css"&gt;
+    ​
+        &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&amp;display=swap" rel="stylesheet"&gt;
+    &lt;/head&gt;
+    &lt;body class="parallax"&gt;
+    ​
+        &lt;!-- header --&gt;
+        &lt;header class="paraInfo"&gt;
+            &lt;h1&gt;&lt;a href="index.html"&gt;Parallax Effect01 - jQuery&lt;/a&gt;&lt;/h1&gt;
+            &lt;p&gt;패랠랙스 스크로링 효과 - 메뉴 이동&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;!-- //header --&gt;
+    ​
+        &lt;!-- main --&gt;
+        &lt;main&gt;
+    
+            &lt;div class="paraScroll"&gt;scrollTop() : &lt;span&gt;0&lt;/span&gt;&lt;/div&gt; &lt;!--scroll--&gt;
+            &lt;div class="paraInfo2"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;section1 offset() &lt;span class="offset1"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section2 offset() &lt;span class="offset2"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section3 offset() &lt;span class="offset3"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section4 offset() &lt;span class="offset4"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section5 offset() &lt;span class="offset5"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section6 offset() &lt;span class="offset6"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section7 offset() &lt;span class="offset7"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section8 offset() &lt;span class="offset8"&gt;0&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;section9 offset() &lt;span class="offset9"&gt;0&lt;/span&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+    
+            &lt;nav class="paraNav"&gt;
+                &lt;ul&gt;
+                    &lt;li class="active"&gt;&lt;a href="#section1"&gt;s1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section2"&gt;s2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section3"&gt;s3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section4"&gt;s4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section5"&gt;s5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section6"&gt;s6&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section7"&gt;s7&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section8"&gt;s8&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#section9"&gt;s9&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;!--nav--&gt;
+    
+            &lt;div class="paraCont"&gt;
+                &lt;section id="section1" class="content-item"&gt;
+                    &lt;span class="num"&gt;01&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section1&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;한번 지나갈 길이라면 즐겁게 지나가자.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section1 --&gt;
+    ​
+                &lt;section id="section2" class="content-item"&gt;
+                    &lt;span class="num"&gt;02&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section2&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;인생의 목적은 성숙하지 않기 위해 싸우는 것.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section2 --&gt;
+    ​
+                &lt;section id="section3" class="content-item"&gt;
+                    &lt;span class="num"&gt;03&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section3&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;반성하지 않는 삶은 살 가치가 없다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section3 --&gt;
+    ​
+                &lt;section id="section4" class="content-item"&gt;
+                    &lt;span class="num"&gt;04&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section4&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;인생은 과감한 모험이던가 아니면 아무것도 아니다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section4 --&gt;
+    ​
+                &lt;section id="section5" class="content-item"&gt;
+                    &lt;span class="num"&gt;05&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section5&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;때로는 살아있는것조차 용기가 될때가 있다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section5 --&gt;
+    ​
+                &lt;section id="section6" class="content-item"&gt;
+                    &lt;span class="num"&gt;06&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section6&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section6 --&gt;
+    ​
+                &lt;section id="section7" class="content-item"&gt;
+                    &lt;span class="num"&gt;07&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section7&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;자연과 조화롭게 살아가는 것이 삶의 목적이다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section7 --&gt;
+    ​
+                &lt;section id="section8" class="content-item"&gt;
+                    &lt;span class="num"&gt;08&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section8&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;태어나면서부터 현명한 이는 없다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section8 --&gt;
+    ​
+                &lt;section id="section9" class="content-item"&gt;
+                    &lt;span class="num"&gt;09&lt;/span&gt;
+                    &lt;h2 class="title"&gt;Section9&lt;/h2&gt;
+                    &lt;figure class="img-Wrap"&gt;
+                        &lt;div class="img"&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+                    &lt;p class="desc"&gt;계획 없는 목표는 한낱 꿈에 불과하다.&lt;/p&gt;
+                &lt;/section&gt;
+                &lt;!-- //section9 --&gt;
+            &lt;/div&gt;
+            &lt;!-- //contents --&gt;
+        &lt;/main&gt;
+        &lt;!-- //main --&gt;
+    ​
+        &lt;!-- footer --&gt;
+        &lt;footer id="paraFooter"&gt;
+            &lt;h1&gt;Parallax &lt;em&gt;Scrolling&lt;/em&gt;&lt;/h1&gt;
+            &lt;div class="footerInfo"&gt;
+                &lt;h2&gt;제이쿼리&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li class="active"&gt;&lt;a href="jqueryPE01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE06.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE07.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="jqueryPE08.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="footerInfo"&gt;
+                &lt;h2&gt;자바스크립트&lt;/h2&gt;
+                &lt;ul&gt; 
+                    &lt;li&gt;&lt;a href="javascriptPE01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE06.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE07.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascriptPE08.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                    
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+        &lt;!-- //footer --&gt;
+    ​
+        &lt;!-- source --&gt;
+        &lt;div class="source"&gt;
+            &lt;button&gt;소스 보기&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;!-- //source --&gt;
+    ​
+        &lt;!-- modal --&gt;
+        &lt;div id="modal"&gt;
+            &lt;div class="modal-bg"&gt;
+                &lt;div class="modal-cont"&gt;
+                    &lt;div class="code-view"&gt;
+                        &lt;div class="view-header"&gt;
+                            &lt;div class="dot" aria-hidden="true"&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="view-title"&gt;
+                            &lt;ul&gt;
+                                &lt;li class="active"&gt;&lt;a href="#"&gt;Html&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;div class="view-cont"&gt;
+                            &lt;div class="html"&gt;
+    &lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;div id="tab-menu"&amp;gt;
+        
+    &lt;/code&gt;&lt;/pre&gt; 
+                            &lt;/div&gt;
+                            &lt;div class="css"&gt;
+    &lt;pre&gt;&lt;code class="language-css"&gt;&lt;/code&gt;&lt;/pre&gt; 
+                            &lt;/div&gt;
+                            &lt;div class="javascript"&gt;
+    &lt;pre&gt;&lt;code class="language-javascript"&gt;&lt;/code&gt;&lt;/pre&gt; 
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;button&gt;닫기&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- //modal --&gt;    
+</code></pre> 
+                </div>
+                <div class="css">
+<pre><code class="language-html">
+    .slider-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    .slider-img {
+        position: relative;
+        width: 800px;
+        height: 480px;
+    }
+    
+    .slider-img img {
+        width: 100%;
+    }
+    
+    .slider {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all .3s;
+    }
+    
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0, 0, 0, .4);
+        color: #fff;
+        padding: 5px 10px 3px;
+        line-height: 1.3;
+        font-family: "NEXONLv1Gothic";
+        content: attr(data-name);
+    }
+    
+    .slider:nth-child(1) {
+        z-index: 5;
+    }
+    
+    .slider:nth-child(2) {
+        z-index: 4;
+    }
+    
+    .slider:nth-child(3) {
+        z-index: 3;
+    }
+    
+    .slider:nth-child(4) {
+        z-index: 2;
+    }
+    
+    .slider:nth-child(5) {
+        z-index: 1;
+    }
+</code></pre>
+                </div>
+<div class="javascript"><pre><code class="language-html">
+    const sliderInner = $(".slider-inner");
+    const slider = $(".slider");
+    const sliderBtn = $(".slider-btn");
+    const sliderDot = $(".slider-dot");
+ 
+    let sliderCount = slider.length;
+    let sliderWidth = slider.width();
+    let sliderTotalWidth = sliderWidth * sliderCount;
+    let currentIndex = 0;
+    let dotIndex = "";
+    
+    //이미지 가로값 셋팅
+    sliderInner.css({width: sliderTotalWidth});
+    slider.css({width: sliderWidth});
+ 
+    slider.each(function(index){
+       dotIndex += "<a href='#' class='dot'>"+ index +"</a>";
+    });
+    sliderDot.html(dotIndex);
+    sliderDot.find("a").eq(currentIndex).addClass("active");
+ 
+    //이미지 움직이기
+    function gotoSlider(num){
+        sliderInner.animate({left: -sliderWidth * num}, 500, "easeInQuart");
+        currentIndex = num;
+        sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+        console.log(num)
+        console.log(currentIndex)
+    }
+ 
+    //닷 버튼 클릭하기
+    sliderDot.on("click", "a", function(e){
+        e.preventDefault();
+        gotoSlider($(this).index())
+    })
+ 
+ 
+    //버튼 클릭하기
+    //sliderBtn.click(function(){})
+    sliderBtn.on("click", "a", function(e){   //on은 클릭뿐만이 아니라 여러이벤트도 같이 사용가능하다.
+        e.preventDefault();
+        let nextIndex = (currentIndex +1) % sliderCount; //두번이상 하기위해 currentIndex가 수가 늘어나든 줄어들든 해야함. 그r것이 위에 있는 currentIndex = num 이다.
+        let prevIndex = (currentIndex -1) % sliderCount;
+        console.log(prevIndex) 
+        console.log(currentIndex) 
+        if(currentIndex == 0) prevIndex = sliderCount -1; //이전버튼을 첫번째 화면에서 누르면 5번 이미지가 나오도록 설정
+ 
+ 
+        if($(this).hasClass("prev")){
+          gotoSlider(prevIndex)
+        } else{
+          gotoSlider(nextIndex)
+        }
+    });  
+</code></pre>
+                </div>
+            </div>
+    </div>
+    <button>닫기</button>
+  </div>
+  
+<!--//modal--> 
+<!--script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/highlight.min.js"></script>
+<script>
+   const sliderInner = $(".slider-inner");
+   const slider = $(".slider");
+   const sliderBtn = $(".slider-btn");
+   const sliderDot = $(".slider-dot");
+
+   let sliderCount = slider.length;
+   let sliderWidth = slider.width();
+   let sliderTotalWidth = sliderWidth * sliderCount;
+   let currentIndex = 0;
+   let dotIndex = "";
+   
+   //이미지 가로값 셋팅
+   sliderInner.css({width: sliderTotalWidth});
+   slider.css({width: sliderWidth});
+
+   slider.each(function(index){
+      dotIndex += "<a href='#' class='dot'>"+ index +"</a>";
+   });
+   sliderDot.html(dotIndex);
+   sliderDot.find("a").eq(currentIndex).addClass("active");
+
+   //이미지 움직이기
+   function gotoSlider(num){
+       sliderInner.animate({left: -sliderWidth * num}, 500, "easeInQuart");
+       currentIndex = num;
+       sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+       console.log(num)
+       console.log(currentIndex)
+   }
+
+   //닷 버튼 클릭하기
+   sliderDot.on("click", "a", function(e){
+       e.preventDefault();
+       gotoSlider($(this).index())
+   })
+
+
+   //버튼 클릭하기
+   //sliderBtn.click(function(){})
+   sliderBtn.on("click", "a", function(e){   //on은 클릭뿐만이 아니라 여러이벤트도 같이 사용가능하다.
+       e.preventDefault();
+       let nextIndex = (currentIndex +1) % sliderCount; //두번이상 하기위해 currentIndex가 수가 늘어나든 줄어들든 해야함. 그r것이 위에 있는 currentIndex = num 이다.
+       let prevIndex = (currentIndex -1) % sliderCount;
+       console.log(prevIndex) 
+       console.log(currentIndex) 
+       if(currentIndex == 0) prevIndex = sliderCount -1; //이전버튼을 첫번째 화면에서 누르면 5번 이미지가 나오도록 설정
+
+
+       if($(this).hasClass("prev")){
+         gotoSlider(prevIndex)
+       } else{
+         gotoSlider(nextIndex)
+       }
+   });
+</script>
+  
+<!--//script-->
+
+</body>
+</html>

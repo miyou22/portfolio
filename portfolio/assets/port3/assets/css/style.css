@@ -1,0 +1,1316 @@
+
+/* scroll */
+.scroll {
+    position: fixed;
+    left: 20px; top: 20px;
+    font-family: 'MaruBuri';
+    z-index: 10000;
+}
+
+.smooth-scroll {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+    overflow: hidden;
+}
+
+/* layout */
+#contents {
+    background: linear-gradient(to bottom, #F0EDEA, #F0EDEA, #EFBDAE, #EFBDAE, #EFBDAE);
+}
+
+/* #section1 {
+    background: #F0EDEA;
+}
+
+#section2 {
+    background: #F0EDEA;
+}
+
+#section3 {
+    background: #EFBDAE;
+}
+
+#section4 {
+    background: #EFBDAE;
+}
+ */
+#section5 {
+    background: #231F20;
+}
+
+
+
+/* header */
+#header {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 10000;
+    font-family: 'MaruBuri';
+    text-align: center;
+    color: #fff;
+}
+
+#header strong {
+    display: block;
+    font-size: 0.5em;
+    font-weight: normal;
+}
+
+/* sec1 */
+.sec1 {
+    height: 80vw;
+    position: relative;
+}
+
+.sec1 h1 {
+    position: absolute;
+    bottom: 0;
+    left: 1.5vw;
+    font-size: 20vw;
+    line-height: 1;
+    z-index: 1000;
+    font-family: "Saol Display Regular";
+    font-weight: normal;
+}
+
+.sec1 .imgWrap1 {
+    position: absolute;
+    left: 33vw;
+    top: 15vw;
+    width: 26vw;
+    height: 36vw;
+    position: relative;
+   
+}
+.sec1 .imgWrap1::before{
+    content: '';
+    background: url(../../img/KakaoTalk_20211128_120100812.jpg);
+    background-position: center top;
+    background-size: cover;
+    transition: all 0.3s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;right: 0; bottom: 0;
+}
+.sec1 .imgWrap1 strong {
+    position: absolute;
+    right: 30px;
+    top: 80%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: 'MaruBuri';
+    font-size: 1.875rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.sec1 .imgWrap1 strong span {
+    display: block;
+    font-size: 1.125em;
+    font-weight: 300;
+}
+
+.sec1 .imgWrap2 {
+    position: absolute;
+    left: 4vw;
+    top: 5vw;
+    width: 15vw;
+    height: 20vw;
+    background: #ccc;
+    background: url(../../img/about02@2x.jpg);
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.sec1 .imgWrap2 strong {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'MaruBuri';
+    font-size: 1.875rem;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.sec1 .imgWrap2 strong span {
+    display: block;
+    font-size: 1.125em;
+    font-weight: 100;
+}
+
+.sec1 .imgWrap3 {
+    position: absolute;
+    right: 4vw;
+    top: 23vw;
+    width: 25vw;
+    height: 14vw;
+    background: url(../../img/about03@2x.jpg);
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.sec1 .imgWrap3 strong {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'MaruBuri';
+    font-size: 1.875rem;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.sec1 .imgWrap3 strong span {
+    display: block;
+    font-size: 1.125em;
+    font-weight: 100;
+}
+
+.sec1 .imgWrap4 {
+    position: absolute;
+    left: 8vw;
+    top: 40vw;
+    width: 30vw;
+    height: 20vw;
+    background: url(../../img/about04@2x.jpg);
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.sec1 .imgWrap4 strong {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'MaruBuri';
+    font-size: 1.875rem;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.sec1 .imgWrap4 strong span {
+    display: block;
+    font-size: 1.125em;
+    font-weight: 100;
+}
+
+.sec1 .imgWrap5 {
+    position: absolute;
+    right: 2vw;
+    top: 50vw;
+    width: 25vw;
+    height: 34vw;
+    background: url(../../img/about05@2x.jpg);
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.sec1 .imgWrap5 strong {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'MaruBuri';
+    font-size: 1.875rem;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.sec1 .imgWrap5 strong span {
+    display: block;
+    font-size: 1.125em;
+    font-weight: 100;
+}
+
+/* sec2 */
+.sec2 {
+    height: 220vw;
+    position: relative;
+}
+
+.sec2 h1 {
+    position: absolute;
+    bottom: -120vh;
+    left: 1.5vw;
+    font-size: 20vw;
+    line-height: 1;
+    z-index: 1000;
+    font-family: "Saol Display Regular";
+    font-weight: normal;
+}
+.sec2 .s2Wrap .img .button .text2 a {
+    display: none;
+}
+
+.sec2 .s2Wrap .img:hover .button {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(39, 37, 37, 0.8);
+    opacity: 1;
+    transition: all 1s;
+}
+
+.sec2 .s2Wrap .img:hover .button .text2 a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    font-size: 1vw;
+    border-radius: 50%;
+    background: #5a99d4;
+    width: 5vw;
+    height: 5vw;
+    line-height: 5vw;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(.9);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 2vw rgba(90, 153, 212, 0.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(.9);
+        box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.4);
+    }
+}
+
+/* 웹 표준 */
+.sec2 .site1 {
+    width: 100%;
+    display: flex;
+    padding-top: 40vh;
+}
+
+.sec2 .site1 .img {
+    background: url(../../img/wrap11.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+}
+
+.sec2 .site1 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+}
+
+.sec2 .site1 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(-20vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site1 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site1 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site1 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site1:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site1:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site1:hover .textWrap a {
+    transform: translateX(0);
+}
+
+/* 반응형 */
+.sec2 .site2 {
+    width: 100%;
+    display: flex;
+    padding-top: 10vh;
+    padding-left: 30vw;
+}
+
+.sec2 .site2 .img {
+    background: url(../../img/wrap20.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+}
+
+.sec2 .site2 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+}
+
+.sec2 .site2 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(-20vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site2 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site2 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site2 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site2:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site2:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site2:hover .textWrap a {
+    transform: translateX(0);
+}
+
+/* 메가박스 */
+.sec2 .site3 {
+    width: 100%;
+    display: flex;
+    padding-top: 10vh;
+    overflow: hidden;
+    flex-direction: row-reverse;
+}
+
+.sec2 .site3 .img {
+    background: url(../../img/wrap30.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+    float: right;
+}
+
+.sec2 .site3 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+    text-align: right;
+}
+
+.sec2 .site3 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(25vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site3 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site3 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site3 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site3:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site3:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site3:hover .textWrap a {
+    transform: translateX(0);
+}
+/* 조별작업 */
+.sec2 .site4 {
+    width: 100%;
+    display: flex;
+    padding-top: 10vh;
+    padding-left: 30vw;
+}
+
+.sec2 .site4 .img {
+    background: url(../../img/wrap40.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+}
+
+.sec2 .site4 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+}
+
+.sec2 .site4 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(-20vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site4 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site4 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site4 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site4:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site4:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site4:hover .textWrap a {
+    transform: translateX(0);
+}
+/* 리액트 */
+.sec2 .site5 {
+    width: 100%;
+    display: flex;
+    padding-top: 10vh;
+}
+
+.sec2 .site5 .img {
+    background: url(../../img/wrap50.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+}
+
+.sec2 .site5 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+}
+
+.sec2 .site5 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(-20vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site5 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site5 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site5 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site5:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site5:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site5:hover .textWrap a {
+    transform: translateX(0);
+}
+/* php */
+.sec2 .site6 {
+    width: 100%;
+    display: flex;
+    padding-top: 10vh;
+    padding-left: 30vw;
+}
+
+.sec2 .site6 .img {
+    background: url(../../img/wrap60.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+}
+
+.sec2 .site6 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+}
+
+.sec2 .site6 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(-20vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site6 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site6 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site6 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(-30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site6:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site6:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site6:hover .textWrap a {
+    transform: translateX(0);
+}
+/* vue */
+.sec2 .site7 {
+    width: 100%;
+    display: flex;
+    padding-top: 10vh;
+    overflow: hidden;
+    flex-direction: row-reverse;
+}
+
+.sec2 .site7 .img {
+    background: url(../../img/wrap70.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 40vw;
+    height: 24vw;
+    position: relative;
+    z-index: 100;
+    float: right;
+}
+
+.sec2 .site7 .textWrap {
+    font-family: 'MaruBuri';
+    padding: 0 1.5vw;
+    width: 30vw;
+    text-align: right;
+}
+
+.sec2 .site7 .textWrap h2 {
+    margin-bottom: 0.6vw;
+    transform: translateX(20vw);
+    transition: transform 0.33s ease;
+}
+
+.sec2 .site7 .textWrap h2 strong {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+.sec2 .site7 .textWrap p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transform: translateX(30vw);
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec2 .site7 .textWrap a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transform: translateX(30vw);
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec2 .site7:hover .textWrap h2 {
+    transform: translateX(0);
+}
+
+.sec2 .site7:hover .textWrap p {
+    transform: translateX(0);
+}
+
+.sec2 .site7:hover .textWrap a {
+    transform: translateX(0);
+}
+/* sec3 */
+.sec3 {
+    padding-top: 60vh;
+    position: relative;
+    min-height: 600vh;
+}
+
+.sec3 h1 {
+    position: absolute;
+    bottom: -210vh;
+    left: 1.5vw;
+    font-size: 20vw;
+    line-height: 1;
+    z-index: 1000;
+    font-family: "Saol Display Regular";
+    font-weight: normal;
+}
+/* parraex effect */
+.sec3 .scriptWrap1 {
+    width: 70vw;
+    height: 70vh;
+}
+
+.sec3 .scriptWrap1 .text {
+    text-align: right;
+    font-family: 'MaruBuri';
+}
+
+.sec3 .scriptWrap1 .text h2 strong {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.sec3 .scriptWrap1 .text p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-left: 37vw;
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec3 .scriptWrap1 .text a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline;
+    margin-bottom: 5px;
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec3 .scriptWrap1 iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* mouse effect */
+.sec3 .scriptWrap2 {
+    margin-top: 50vh;
+    margin-bottom: 50vh;
+    width: 70vw;
+    height: 70vh;
+    float: right;
+}
+
+.sec3 .scriptWrap2 .text {
+    text-align: left;
+    font-family: 'MaruBuri';
+}
+
+.sec3 .scriptWrap2 .text h2 strong {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.sec3 .scriptWrap2 .text p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-right: 37vw;
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec3 .scriptWrap2 .text a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline;
+    margin-bottom: 5px;
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec3 .scriptWrap2 iframe {
+    width: 100%;
+    height: 100%;
+}
+/* slider effect */
+.sec3 .scriptWrap3 {
+    width: 70vw;
+    height: 70vh;
+}
+
+.sec3 .scriptWrap3 .text {
+    text-align: right;
+    font-family: 'MaruBuri';
+}
+
+.sec3 .scriptWrap3 .text h2 strong {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.sec3 .scriptWrap3 .text p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-left: 37vw;
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec3 .scriptWrap3 .text a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline;
+    margin-bottom: 5px;
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec3 .scriptWrap3 iframe {
+    width: 100%;
+    height: 100%;
+}
+/* mouse effect */
+.sec3 .scriptWrap4 {
+    margin-top: 120vh;
+    width: 70vw;
+    height: 70vh;
+    float: right;
+}
+
+.sec3 .scriptWrap4 .text {
+    text-align: left;
+    font-family: 'MaruBuri';
+}
+
+.sec3 .scriptWrap4 .text h2 strong {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.sec3 .scriptWrap4 .text p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-right: 35vw;
+    transition: transform 0.33s ease 0.1s;
+}
+
+.sec3 .scriptWrap4 .text a {
+    background: #000;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline;
+    margin-bottom: 5px;
+    transition: transform 0.33s ease 0.2s;
+}
+
+.sec3 .scriptWrap4 iframe {
+    width: 100%;
+    height: 100%;
+}
+/* sec4 */
+.sec4{
+    width: 100%;
+    height: 130vh;
+}
+.sec4 .s4img {
+    position: relative;
+    width: 100%;
+    height: 130vh;
+}
+.sec4 .s4img::before{
+    content: '';
+    background: url(../../img/12431.webp);
+    background-size: cover;
+    filter: brightness(0.5);
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+.sec4 .s4img .title{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Saol Display Regular";
+
+}
+.sec4 .s4img .title span{
+    font-size: 4rem;
+    text-align: center;
+    color: #fff; 
+}
+.sec4 .s4img .title p{
+    font-size: 2rem;
+    text-align: center;
+    color: #fff; 
+}
+
+
+
+/* sec5 */
+.sec5{
+    width: 100%;
+    height: 160vh;
+    position: relative;
+}
+.sec5 img{
+    width: 9vh;
+    height: 9vw;
+    position: absolute;
+    top: 20vh; left: 8vw;
+}
+.s5textWrap{
+    color: #fff;
+    position: absolute;
+    top: 20vh;
+    left: 33vw;
+    padding-top: 3vh;
+    padding-right: 10vw;
+
+}
+.s5textWrap h2{
+    font-size: 4rem;
+    margin-bottom: 5vh;
+    font-family: "Saol Display Regular";
+
+}
+.s5textWrap p{
+    font-size: 1.7rem;
+    font-family: 'MaruBuri';
+    line-height: 1.8;
+}
+.s5join{
+    position: absolute;
+    top: 80vh;
+    left: 9vw;
+    width: 40vw;
+    margin-top: 10vh;
+    font-family: "Saol Display Regular";
+
+}
+.s5join .spam{
+    color: #fff;
+    transform: rotate(10deg);
+    transition: transform 800ms cubic-bezier(0.155, 0.1, 0.135, 1.01),
+    opacity 500ms linear,
+    -webkit-transform 800ms cubic-bezier(0.155, 0.1, 0.135, 1.01);
+    opacity: 1;
+    position: absolute;
+    top: -6rem;
+    left: 7rem;
+    color: #F8BBAB;
+    font-size: 1.2rem;
+
+}
+.s5join .spam::before{
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background-image: url(https://thecanvasagency.com/assets/svg/footer-curve.svg);
+    background-size: 99%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.s5join h2{
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'MaruBuri';
+    line-height: 2;
+
+}
+.contact{
+    position: absolute;
+    top: 60vh;
+    right: 11vw;
+    color: #fff;
+    margin-top: 15vh;
+    font-family: "Saol Display Regular";
+}
+.contact .title{
+    text-align: right;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10vh;
+}
+.contact .title h2 {
+    position: relative;
+    font-size: 5rem;
+    text-align: right;
+}
+.contact .title h2::before {
+    position: absolute;
+    top: -35vh;
+    right: -5vw;
+    content: '';
+    width: 50vw;
+    height: 50vw;
+    background: url(../../img/KakaoTalk_20211120_173539620_04.jpg);
+    background-position: center top;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.5;
+    transition: 0.7s 0.5s;
+    transform: scale(0.2);
+    transform-origin: center;
+}
+.contact .title h2::before:hover{
+    filter: brightness(2);
+}
+.contact .title em {
+    font-size: 2.5rem;
+    text-align: right;
+}
+.produce{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.produce .emailWrap {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 5vh;
+}
+.produce .emailWrap .emailImg {
+    width: 2vw;
+    height: 2vw;
+    background: url(../../img/Message_light.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.produce .emailWrap .email{
+    font-size: 1rem;
+}
+.produce .tell {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 5vh;
+}
+.produce .tell .tellImg{
+      width: 2vw;
+      height: 2vw;
+      background: url(../../img/Phone_light.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.produce .tell .phone {
+    font-size: 1rem;
+}
+.produce .introduce {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 3vh;
+}
+.produce .introduce .monitor {
+      width: 2vw;
+      height: 2vw;
+      background: url(../../img/desktop_light.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.produce .introduce .myme {
+    font-size: 1rem;
+}
+@media (max-width: 1500px) {
+    #header h1 {
+        font-size: 2rem;
+    }
+
+    #section1 .sec1 strong {
+        font-size: 1.3rem;
+    }
+
+    #section2 .sec2 {
+        margin-top: -10vh;
+        margin-bottom: 30vh;
+    }
+
+    #section2 .sec2 h2 {
+        font-size: 5px;
+    }
+
+    #section2 .sec2 p {
+        font-size: 2px;
+    }
+
+    #section2 .sec2 .textWrap a {
+        padding: 5px 10px;
+    }
+}
+@media (max-width: 1200px){
+    #section5 .sec5 {
+        height: 200vh;
+    }
+
+    #section5 .sec5 img {
+        text-align: center;
+        top: 20vh;
+        left: 45%;
+    }
+
+    #section5 .sec5 .s5textWrap {
+        top: 25vh;
+        left: 10%;
+        text-align: center;
+        display: block;
+    }
+
+    #section5 .sec5 .s5textWrap p {
+        text-align: center;
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    #section5 .sec5 .s5join {
+        display: block;
+        top: 90vh;
+        width: 100%;
+    }
+
+    #section5 .sec5 .s5join h2 {
+        font-size: 1.4rem;
+        width: 80%;
+    }
+
+    #section5 .sec5 .contact {
+        display: block;
+        top: 110vh;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    #section5 .sec5 .contact .title h2::before {
+        top: -50vh;
+        left: -60vw;
+        width: 150vw;
+        height: 150vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    #header h1 {
+        font-size: 1.5rem;
+    }
+
+    #section1 .sec1 strong {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    /* sec2 */
+    #section2 .sec2 .textWrap  h2{
+         transform: translateX(0);
+         font-size: 1rem;
+          
+      }
+    #section2 .sec2 .textWrap p,
+    #section2 .sec2 .textWrap a {
+          display: none;
+      }
+    /* sec3 */
+    #section3 .sec3{
+        min-height: 350vh;
+    }
+    #section3 .sec3 h1{
+        bottom: -90vh;
+    }
+    #section3 .sec3 .s3{
+          height: 40vh;
+          float: none;
+          margin-top: 20vh;
+          margin-bottom: 0;
+      }
+ 
+    #section3 .sec3 .s3 iframe {
+        width: 500px;
+        text-align: center;
+    }
+    #section3 .sec3 .text{
+        width: 100%;
+        height: 100%;
+    }
+    #section3 .sec3 .text h2{
+        text-align: left;
+    }
+    #section3 .sec3 .text h2 strong{
+        font-size: 2rem;
+    }
+    #section3 .sec3 .text p{
+        display: none;
+    }
+ 
+    #section3 .sec3 .text a{
+        display: inline-block;
+    }
+
+    /* sec5 */
+    #section5 .sec5{
+        height: 200vh;
+    }
+    #section5 .sec5 img{
+        text-align: center;
+        top: 20vh; left: 45%;
+    }
+    #section5 .sec5 .s5textWrap{
+        top: 25vh; left: 10%;
+        text-align: center;
+        display: block;
+    } 
+    #section5 .sec5 .s5textWrap p{
+        text-align: center;
+        display: block;
+        font-size: 1rem;
+    } 
+    #section5 .sec5 .s5join{
+        display: block;
+        top: 80vh;
+        width: 100%;
+    }
+    #section5 .sec5 .s5join h2 {
+        font-size: 1.4rem;
+        width: 80%;
+    }
+    #section5 .sec5 .contact{
+        display: block;
+        top: 110vh;
+    }
+    #section5 .sec5 .contact .title h2::before {
+        top: -20vh; left: -50vw;
+        width: 150vw; height: 150vw;
+    }
+}
